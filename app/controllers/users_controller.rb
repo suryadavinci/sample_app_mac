@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       #Handle successful save
       #render "show/#{@user.id}"
       #render "show"
+      log_in @user
       flash[:success] = "Welcome to Sample App"
       redirect_to @user
     else
@@ -24,7 +25,6 @@ class UsersController < ApplicationController
 private
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
-
   end
 
 end
