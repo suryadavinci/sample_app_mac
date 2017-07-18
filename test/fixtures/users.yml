@@ -19,7 +19,7 @@ surya:
 rails:
   name: Rails Tutorial
   email: example@railstutorial.org
-  password_digest: <%= User.digest('testing') %>
+  password_digest: <%= User.digest('foobar') %>
 
 
 
