@@ -3,8 +3,8 @@ class StaticPagesController < ApplicationController
     if logged_in?
       @micropost  = current_user.microposts.build
 
-      @feed_items = current_user.feed.paginate(page: params[:page])   #gives n+1 query issue
-      #@feed_items = current_user.feed.includes(:user).paginate( page: params[:page])   #n+1 query issue resolved
+      #@feed_items = current_user.feed.paginate(page: params[:page])   #gives n+1 query issue
+      @feed_items = current_user.feed.includes(:user).paginate( page: params[:page])   #n+1 query issue resolved
 
     end
   end
